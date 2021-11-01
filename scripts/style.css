@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Lobster", cursive;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highScore {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+
+span {
+  font-size: 30px;
+}
+
+#my-canvas {
+  height: 562.5px;
+  width: 1000px;
+  background-color: lightgrey;
+  cursor: url(/img/HUD/crosshair_outline_large.png) 25.5 25.5, auto;
+}
