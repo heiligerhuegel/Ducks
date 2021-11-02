@@ -1,7 +1,7 @@
 class Wave {
   constructor(PosY) {
     this.wave = new Image();
-    this.wave.src = "/img/foreground/waves1.png";
+    this.wave.src = "./img/foreground/waves1.png";
 
     this.x = -500;
     this.y = canvas.height - PosY;

@@ -1,7 +1,7 @@
 class StartButton {
   constructor() {
     this.startButtonImg = new Image();
-    this.startButtonImg.src = "/img/HUD/text_go.png";
+    this.startButtonImg.src = "./img/HUD/text_go.png";
 
     this.width = 111;
     this.height = 66;

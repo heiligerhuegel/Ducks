@@ -1,27 +1,27 @@
 class Score {
   constructor() {
     this.ScoreImg = new Image();
-    this.ScoreImg.src = "/img/HUD/text_score.png";
+    this.ScoreImg.src = "./img/HUD/text_score.png";
     this.ZeroImg = new Image();
-    this.ZeroImg.src = "/img/HUD/text_0.png";
+    this.ZeroImg.src = "./img/HUD/text_0.png";
     this.OneImg = new Image();
-    this.OneImg.src = "/img/HUD/text_1.png";
+    this.OneImg.src = "./img/HUD/text_1.png";
     this.TwoImg = new Image();
-    this.TwoImg.src = "/img/HUD/text_2.png";
+    this.TwoImg.src = "./img/HUD/text_2.png";
     this.ThreeImg = new Image();
-    this.ThreeImg.src = "/img/HUD/text_3.png";
+    this.ThreeImg.src = "./img/HUD/text_3.png";
     this.FourImg = new Image();
-    this.FourImg.src = "/img/HUD/text_4.png";
+    this.FourImg.src = "./img/HUD/text_4.png";
     this.FiveImg = new Image();
-    this.FiveImg.src = "/img/HUD/text_5.png";
+    this.FiveImg.src = "./img/HUD/text_5.png";
     this.SixImg = new Image();
-    this.SixImg.src = "/img/HUD/text_6.png";
+    this.SixImg.src = "./img/HUD/text_6.png";
     this.SevenImg = new Image();
-    this.SevenImg.src = "/img/HUD/text_7.png";
+    this.SevenImg.src = "./img/HUD/text_7.png";
     this.EightImg = new Image();
-    this.EightImg.src = "/img/HUD/text_8.png";
+    this.EightImg.src = "./img/HUD/text_8.png";
     this.NineImg = new Image();
-    this.NineImg.src = "/img/HUD/text_9.png";
+    this.NineImg.src = "./img/HUD/text_9.png";
 
     this.score = "";
     this.singleScores = [];

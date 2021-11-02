@@ -14,9 +14,9 @@ let game;
 
 //sounds
 
-let gunshot = new Audio("/sounds/pistol.wav");
-let reload = new Audio("/sounds/reload.wav");
-let musicB = new Audio("/sounds/Lively Meadow (Song Loop) B 118.wav");
+let gunshot = new Audio("./sounds/pistol.wav");
+let reload = new Audio("./sounds/reload.wav");
+let musicB = new Audio("./sounds/Lively Meadow (Song Loop) B 118.wav");
 musicB.loop = true;
 
 //* Functions
@@ -28,30 +28,27 @@ const startGame = () => {
   game.gameLoop();
 };
 
-const playMusic = () => {
-  musicB.play();
-};
-
 //* Add Event listeners
+setInterval(() => this.baz(game.time--), 5000);
+
+window.addEventListener("load", startGame);
+
+window.addEventListener("load", musicB.play());
 
 window.addEventListener("keydown", (index) => {
   if (index.key === "r" && !reloadBool) {
     reload.play();
+
     reloadBool = true;
     game.ammo = 5;
   }
   if (index.key === "q") {
     game.gameRunning = false;
   }
-  if (index.key === "w") {
-    game.gameRunning = true;
-  }
+  // if (index.key === "w") {
+  //   game.gameRunning = true;
+  // }
 });
-
-window.addEventListener("load", startGame);
-window.addEventListener("load", playMusic);
-//window.setInterval(game.time--, 1000);
-setInterval(() => this.baz(game.time--), 1000);
 
 canvas.addEventListener(
   "click",

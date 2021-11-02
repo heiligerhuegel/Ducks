@@ -1,7 +1,7 @@
 class Curtains {
   constructor() {
     this.curtains = new Image();
-    this.curtains.src = "/img/foreground/curtains.png";
+    this.curtains.src = "./img/foreground/curtains.png";
 
     this.x = 0;
     this.y = 0;

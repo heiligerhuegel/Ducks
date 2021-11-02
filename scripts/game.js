@@ -1,14 +1,14 @@
 class Game {
   constructor() {
     this.background = new Image();
-    this.background.src = "/img/Background/backgroundimg.png";
+    this.background.src = "./img/Background/backgroundimg.png";
     this.foreground = new Image();
-    this.foreground.src = "/img/foreground/foregroundimg.png";
+    this.foreground.src = "./img/foreground/foregroundimg.png";
     this.foregroundbottom = new Image();
-    this.foregroundbottom.src = "/img/foreground/Ohne foreground bottom.png";
+    this.foregroundbottom.src = "./img/foreground/Ohne foreground bottom.png";
 
     this.gras = new Image();
-    this.gras.src = "/img/foreground/grass1.png";
+    this.gras.src = "./img/foreground/grass1.png";
     this.waveFront = new Wave(240);
     this.waveBack = new Wave(430);
     this.curtains = new Curtains();

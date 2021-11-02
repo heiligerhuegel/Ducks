@@ -1,9 +1,9 @@
 class DuckOnGrass {
   constructor() {
     this.duck = new Image();
-    this.duck.src = "/img/Objects/duck_outline_yellow.png";
+    this.duck.src = "./img/Objects/duck_outline_yellow.png";
     this.stick = new Image();
-    this.stick.src = "/img/Objects/stick_metal.png";
+    this.stick.src = "./img/Objects/stick_metal.png";
     //this.duckBackground.src = "/img/Objects/duck_back.png"
     this.width = 114;
     this.height = 109;
@@ -65,9 +65,9 @@ class DuckOnGrass {
 class DucksOnWater {
   constructor() {
     this.duck = new Image();
-    this.duck.src = "/img/Objects/duck_outline_white.png";
+    this.duck.src = "./img/Objects/duck_outline_white.png";
     this.stick = new Image();
-    this.stick.src = "/img/Objects/stick_metal.png";
+    this.stick.src = "./img/Objects/stick_metal.png";
     this.width = 114;
     this.height = 109;
 

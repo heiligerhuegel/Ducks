@@ -1,9 +1,9 @@
 class Ammo {
   constructor() {
     this.bullet = new Image();
-    this.bullet.src = "/img/HUD/icon_bullet_gold_long.png";
+    this.bullet.src = "./img/HUD/icon_bullet_gold_long.png";
     this.emptybullet = new Image();
-    this.emptybullet.src = "/img/HUD/icon_bullet_empty_long.png";
+    this.emptybullet.src = "./img/HUD/icon_bullet_empty_long.png";
 
     this.amtArray = [];
   }
