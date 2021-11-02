@@ -32,8 +32,10 @@ class StartButton {
       }
 
       game.ducksOnGrassArray.push(new DuckOnGrass());
+      game.ducksOnWaterArray.push(new DucksOnWater());
       game.score = 0;
       game.time = 120;
+      game.ammo = 5;
 
       game.gameRunning = true;
     }

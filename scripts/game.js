@@ -18,7 +18,10 @@ class Game {
     this.spawnDistance = 0;
 
     this.ducksOnGrassArray = [];
-    //this.ducksOnWaterArray = [new DuckOnGrass()];
+    this.ducksOnWaterArray = [];
+
+    this.ammoCount = new Ammo();
+    this.ammo = 5;
 
     this.highScoreText = document.querySelector(".highScore span");
     this.highScore = 0;
@@ -38,14 +41,24 @@ class Game {
       this.ducksOnGrassArray[this.ducksOnGrassArray.length - 1].x >
       this.spawnDistance
     ) {
-      //console.log(this.ducksOnGrassArray.length);
       this.ducksOnGrassArray.push(new DuckOnGrass());
+    }
+  };
+  spawnDuckOnWater = () => {
+    if (
+      this.ducksOnWaterArray[this.ducksOnWaterArray.length - 1].x >
+      this.spawnDistance
+    ) {
+      this.ducksOnWaterArray.push(new DucksOnWater());
     }
   };
 
   checkDuckPos = () => {
     if (this.ducksOnGrassArray[0].x > canvas.width) {
       this.ducksOnGrassArray.shift();
+    }
+    if (this.ducksOnWaterArray[0].x > canvas.width) {
+      this.ducksOnWaterArray.shift();
     }
   };
 
@@ -66,10 +79,14 @@ class Game {
 
     if (this.gameRunning) {
       this.spawnDuckOnGrass();
+      this.spawnDuckOnWater();
       this.checkDuckPos();
       this.curtains.moveCurtainsUp();
 
       this.ducksOnGrassArray.forEach((element) => {
+        element.moveDuck();
+      });
+      this.ducksOnWaterArray.forEach((element) => {
         element.moveDuck();
       });
     }
@@ -77,8 +94,6 @@ class Game {
     if (!this.gameRunning) {
       this.curtains.moveCurtainsDown();
     }
-
-    //! Ducks2 movement !
 
     //* 3.drawing the elements
     ctx.drawImage(this.background, 0, 0, canvas.width, canvas.height);
@@ -91,7 +106,9 @@ class Game {
 
     this.waveBack.drawWave();
 
-    //! Ducks in Water  Here
+    this.ducksOnWaterArray.forEach((element) => {
+      element.drawDuck();
+    });
 
     this.waveFront.drawWave();
 
@@ -101,12 +118,17 @@ class Game {
 
     this.curtains.drawCurtains();
 
-    this.scoreImgs.scoreUpdate();
     this.scoreImgs.drawScore();
 
-    this.timeImgs.timeUpdate();
-    this.timeImgs.drawTime();
     this.timeImgs.timeOver();
+
+    if (this.gameRunning) {
+      this.scoreImgs.scoreUpdate();
+      this.ammoCount.updateAmmo();
+      this.ammoCount.drawAmmo();
+      this.timeImgs.timeUpdate();
+      this.timeImgs.drawTime();
+    }
 
     if (!this.gameRunning && this.curtains.y >= 0) {
       this.startButton.drawButton();

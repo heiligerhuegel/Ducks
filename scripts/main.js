@@ -1,5 +1,8 @@
 //* Global Variables
 
+let shotBool = false;
+let reloadBool = false;
+
 // canvas setup ;
 
 let canvas = document.querySelector("#my-canvas");
@@ -17,6 +20,8 @@ let musicB = new Audio("/sounds/Lively Meadow (Song Loop) B 118.wav");
 musicB.loop = true;
 
 //* Functions
+gunshot.onended = () => (shotBool = false);
+reload.onended = () => (reloadBool = false);
 
 const startGame = () => {
   game = new Game();
@@ -24,14 +29,16 @@ const startGame = () => {
 };
 
 const playMusic = () => {
-  //musicB.play();
+  musicB.play();
 };
 
 //* Add Event listeners
 
 window.addEventListener("keydown", (index) => {
-  if (index.key === "r") {
-    //reload.play();
+  if (index.key === "r" && !reloadBool) {
+    reload.play();
+    reloadBool = true;
+    game.ammo = 5;
   }
   if (index.key === "q") {
     game.gameRunning = false;
@@ -52,10 +59,20 @@ canvas.addEventListener(
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    //gunshot.play();
-    game.ducksOnGrassArray.forEach((element) => {
-      element.clickDuck(x, y);
-    });
+
+    if (game.gameRunning && !shotBool && !reloadBool) {
+      if (game.ammo > 0) {
+        gunshot.play();
+        shotBool = true;
+        game.ammo--;
+        game.ducksOnGrassArray.forEach((element) => {
+          element.clickDuck(x, y);
+        });
+        game.ducksOnWaterArray.forEach((element) => {
+          element.clickDuck(x, y);
+        });
+      }
+    }
 
     game.startButton.startGame(x, y);
   },
