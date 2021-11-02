@@ -29,7 +29,7 @@ const startGame = () => {
 };
 
 //* Add Event listeners
-setInterval(() => this.baz(game.time--), 5000);
+setInterval(() => this.baz(game.time--), 1000);
 
 window.addEventListener("load", musicB.play());
 
