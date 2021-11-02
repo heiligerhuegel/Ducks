@@ -27,10 +27,8 @@ class StartButton {
     );
     if (distance < this.height && game.gameRunning === false) {
       // reset game
-      for (let i = 0; i < game.ducksOnGrassArray.length; i++) {
-        game.ducksOnGrassArray = [];
-      }
-
+      game.ducksOnGrassArray = [];
+      game.ducksOnWaterArray = [];
       game.ducksOnGrassArray.push(new DuckOnGrass());
       game.ducksOnWaterArray.push(new DucksOnWater());
       game.score = 0;
