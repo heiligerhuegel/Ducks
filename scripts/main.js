@@ -31,9 +31,9 @@ const startGame = () => {
 //* Add Event listeners
 setInterval(() => this.baz(game.time--), 5000);
 
-window.addEventListener("load", startGame);
-
 window.addEventListener("load", musicB.play());
+
+window.addEventListener("load", startGame);
 
 window.addEventListener("keydown", (index) => {
   if (index.key === "r" && !reloadBool) {
@@ -45,9 +45,6 @@ window.addEventListener("keydown", (index) => {
   if (index.key === "q") {
     game.gameRunning = false;
   }
-  // if (index.key === "w") {
-  //   game.gameRunning = true;
-  // }
 });
 
 canvas.addEventListener(
