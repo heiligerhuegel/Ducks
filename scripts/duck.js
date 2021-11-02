@@ -56,7 +56,7 @@ class DuckOnGrass {
         (yMouse * 2 - this.centerY) * (yMouse * 2 - this.centerY)
     );
     if (distance < this.height / 2) {
-      game.score += 20;
+      game.score += 5;
       this.isAlive = false;
     }
   };
@@ -119,7 +119,7 @@ class DucksOnWater {
         (yMouse * 2 - this.centerY) * (yMouse * 2 - this.centerY)
     );
     if (distance < this.height / 2) {
-      game.score += 10;
+      game.score += 20;
       this.isAlive = false;
     }
   };
