@@ -70,9 +70,6 @@ class Ammo {
         ];
 
         break;
-
-      default:
-        break;
     }
   };
 
