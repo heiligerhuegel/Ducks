@@ -72,7 +72,9 @@ class Game {
     this.stupidfuckingmusic();
 
     //console.log("Game running!");
+
     this.highScoreText.innerText = this.highScore.toString();
+    
     if (this.score > this.highScore) {
       this.highScore = this.score;
     }
