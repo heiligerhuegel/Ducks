@@ -36,6 +36,5 @@ span {
   height: 562.5px;
   width: 1000px;
   background-color: lightgrey;
-  cursor: url(/img/HUD/crosshair_outline_large.png) 25.5 25.5, auto;
-  pointer-events: auto;
+  cursor: url(/img/HUD/crosshair_outline_large.png) 16 16, auto;
 }

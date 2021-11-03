@@ -29,10 +29,10 @@ const startGame = () => {
 };
 
 //* Add Event listeners
+// timer fpr countdown, i dont know why it works but it works !
 setInterval(() => this.baz(game.time--), 1000);
 
 window.addEventListener("load", musicB.play());
-
 window.addEventListener("load", startGame);
 
 window.addEventListener("keydown", (index) => {
