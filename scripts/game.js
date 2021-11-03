@@ -33,8 +33,14 @@ class Game {
     this.timeImgs = new Timer();
 
     this.gameRunning = false;
+
+    this.music = new Audio("./sounds/Lively Meadow (Song Loop) B 118.wav");
   }
   // methods
+
+  stupidfuckingmusic = () => {
+    this.music.play();
+  };
 
   spawnDuckOnGrass = () => {
     if (
@@ -63,6 +69,8 @@ class Game {
   };
 
   gameLoop = () => {
+    this.stupidfuckingmusic();
+
     //console.log("Game running!");
     this.highScoreText.innerText = this.highScore.toString();
     if (this.score > this.highScore) {

@@ -14,10 +14,8 @@ let game;
 
 //sounds
 
-let gunshot = new Audio("./sounds/pistol.wav");
-let reload = new Audio("./sounds/reload.wav");
-let musicB = new Audio("./sounds/Lively Meadow (Song Loop) B 118.wav");
-musicB.loop = true;
+let gunshot = new Audio("./sounds/pistol_short.mp3");
+let reload = new Audio("./sounds/reload_short.mp3");
 
 //* Functions
 gunshot.onended = () => (shotBool = false);
@@ -32,7 +30,6 @@ const startGame = () => {
 // timer fpr countdown, i dont know why it works but it works !
 setInterval(() => this.baz(game.time--), 1000);
 
-window.addEventListener("load", musicB.play());
 window.addEventListener("load", startGame);
 
 window.addEventListener("keydown", (index) => {
